@@ -3,7 +3,6 @@ import Head from 'next/head'
 type Props = {
   title: string
 }
-const foo = 'asdsada'
 
 export default function Home({ title = 'PAULA' }: Props) {
   return (
