@@ -10,6 +10,17 @@
     "test": "jest",
     "test:watch": "npm run test --watch"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npm run lint --fix",
+      "npm run test --findRelatedTests --bail"
+    ]
+  },
   "dependencies": {
     "next": "9.4.4",
     "react": "16.13.1",
