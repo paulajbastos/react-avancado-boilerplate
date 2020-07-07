@@ -16,8 +16,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*": [
-      "npm run lint --fix",
+    "*.+(js|ts|tsx)": [
+      "eslint src --max-warnings=0 --fix"
+    ],
+    "*test.+(js|ts|tsx)": [
       "npm run test --findRelatedTests --bail"
     ]
   },
