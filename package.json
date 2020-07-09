@@ -14,12 +14,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.+(js|ts|tsx)": [
-      "eslint src --max-warnings=0 --fix"
+    "src/**/*": [
+      "npm run lint -- --fix",
+      "npm run test -- --findRelatedTests --bail"
     ]
   },
   "dependencies": {
